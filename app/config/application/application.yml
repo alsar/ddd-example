@@ -1,0 +1,10 @@
+parameters:
+    locale: en
+
+
+framework:
+    session:
+        gc_maxlifetime: 3600
+        gc_probability: 1
+        gc_divisor: 10
+        save_path: "%kernel.var_dir%/session"
