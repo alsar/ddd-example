@@ -1,0 +1,24 @@
+Alsar\Ddd\Domain\Membership\Membership:
+    type: entity
+    table: membership
+
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+
+    manyToMany:
+        periods:
+            targetEntity: Alsar\Ddd\Domain\Membership\Period
+            cascade: ["persist", "remove"]
+            orphanRemoval: true
+            joinTable:
+              name: membership_periods
+              joinColumns:
+                  membership_id:
+                      referencedColumnName: id
+              inverseJoinColumns:
+                  period_id:
+                      referencedColumnName: id
+                      unique: true

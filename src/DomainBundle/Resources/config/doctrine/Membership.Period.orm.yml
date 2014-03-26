@@ -1,0 +1,22 @@
+Alsar\Ddd\Domain\Membership\Period:
+    type: entity
+    table: membership_period
+
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+
+    embedded:
+        range:
+            class: Alsar\ValueObject\DateTimeRange
+
+    fields:
+        createdAt:
+            type: datetime
+
+    oneToOne:
+        package:
+            targetEntity: Alsar\Ddd\Domain\Membership\Package\AbstractPackage
+            cascade: ["persist", "remove"]

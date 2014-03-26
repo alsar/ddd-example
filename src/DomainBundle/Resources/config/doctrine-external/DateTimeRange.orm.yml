@@ -1,0 +1,8 @@
+Alsar\ValueObject\DateTimeRange:
+    type: embeddable
+
+    fields:
+        start:
+            type: datetime
+        end:
+            type: datetime

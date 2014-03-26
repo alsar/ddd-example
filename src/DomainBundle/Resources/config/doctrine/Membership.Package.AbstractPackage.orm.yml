@@ -1,0 +1,28 @@
+Alsar\Ddd\Domain\Membership\Package\AbstractPackage:
+    type: entity
+    table: membership_package
+
+    inheritanceType: SINGLE_TABLE
+    discriminatorColumn:
+        name: discr
+        type: string
+        length: 10
+    discriminatorMap:
+        available: AvailablePackage
+        selected: SelectedPackage
+
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+
+    fields:
+        name:
+            type: string
+            length: 30
+        price:
+            type: money
+            length: 10
+        interval:
+            type: integer

@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
             new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
+            new Alsar\Ddd\DomainBundle\AlsarDddDomainBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

@@ -1,13 +1,17 @@
 doctrine:
-#    dbal:
-#        types:
-#            money:
-#                class: Alsar\Ddd\Application\DomainBundle\Doctrine\MoneyType
+    dbal:
+        types:
+            money:
+                class: Alsar\Ddd\DomainBundle\Doctrine\MoneyType
     orm:
         entity_managers:
             default:
                 mappings:
-#                    AlsarDddWebBundle: ~
-#                    AlsarDddDomainBundle:
-#                        type:                 yml
-#                        prefix:               Alsar\Ddd\Domain
+                    AlsarDddDomainBundle:
+                        type:                 yml
+                        prefix:               Alsar\Ddd\Domain
+                    ValueObject:
+                        type:                 yml
+                        dir:                  "%kernel.root_dir%/../src/DomainBundle/Resources/config/doctrine-external"
+                        prefix:               Alsar\ValueObject
+                        is_bundle:            false
